@@ -1,0 +1,172 @@
+
+
+
+.stat-table th{
+    border: 0px solid black;
+    text-align: center;
+    font-weight: normal;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: block;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 12;
+}
+
+.shadow{
+    box-shadow: rgba(0, 0, 0, 0.65) 0px 5px 15px;
+}
+
+.hover-salmon{
+    transition: background-color color 0.25s;
+}
+
+.init-item:not(.grabbing) .cursor-grab{
+    cursor:grab;
+}
+
+.init-item.grabbing .cursor-grab{
+    cursor:grabbing;
+}
+
+.hover-salmon:hover{
+    background-color: salmon!important;
+    color:black!important;
+}
+
+.bg-center{
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+}
+
+.bg-100{
+    background-size: 100%!important;
+}
+
+.hoverover {
+    transition:opacity 0.25s;
+    opacity : 0
+}
+
+.hoverover:hover {
+    opacity : 0.25
+}
+
+.mb-128{
+    margin-top: 128px!important;
+}
+
+.border-dashed{
+    border:2px dashed lightgray
+}
+
+.color-gray {
+    color: lightgray
+}
+.color-gray-hover:hover {
+    color: gray;
+}
+.color-hp{
+    color : salmon;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.init-item{
+    transition: margin 0.0s;
+}
+
+.fade{
+    transition:opacity 30s;
+    opacity: 0;
+}
+
+.instant-fade{
+    transition: opacity 0s!important;
+}
+
+input{
+    color:white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+input:focus{
+    outline:0px solid transparent;
+    
+}
+
+.dmode-translucent{
+    opacity: 1!important;
+}
+
+@media (prefers-color-scheme: dark) { 
+    /* all your styles for dark mode here */ 
+    body{
+        background-color:#333;
+    }
+
+    .search-input{
+        background-color: rgba(0,0,0,0);
+        border:0px solid transparent;
+        border-bottom: 1px solid gray;
+    }
+
+    .search-input:focus{
+        outline: 0px!important;
+        
+    }
+
+    .bg-white{
+        background-color:#333!important;
+    }
+
+    .bg-light{
+        background-color:#222!important;
+    }
+
+    .bg-dark{
+        background-color: #444a40!important;
+    }
+
+    .border-dashed{
+        border:2px dashed gray;
+    }
+    .color-gray {
+        transition: color 0.25s;
+        color: gray;
+    }
+    .color-gray-hover:hover {
+        color: lightgray;
+    }
+
+    .color-hp{
+        color:rosybrown;
+    }
+
+    .hover-salmon:hover{
+        background-color: rosybrown!important;
+        color:black!important;
+    }
+
+    .dmode-translucent{
+        opacity: 0.5!important;
+    }
+
+    input{
+        color:white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+    }
+    .text-outlined{
+        color:white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+    }
+}
