@@ -63,7 +63,8 @@ class Default extends React.Component{
 
     bodyStyle={
         height: "calc(100vh - 78px)",
-        overflowY:"auto"
+        overflowY:"auto",
+        zIndex:100
     }
 
     render(){
@@ -403,7 +404,7 @@ class InitiativeList extends React.Component{
 
 
 class InitiativeItem extends React.Component{
-    classList = "my-1 mx-0 p-0 w-100 bg-light row init-item";
+    classList = "my-1 mx-0 p-0 w-100 bg-light row init-item z-100";
     styleSheet={height:"128px"}
     render(){
         return <div id={this.props.name.replace(/\W/g,"") + this.props.index} className={this.classList} style={this.styleSheet} title={this.props.name}>
@@ -455,6 +456,7 @@ class GrabBar extends React.Component{
         className={this.getClassList()} 
         style={this.styleSheet} 
         onMouseDown={this.handleGrab.bind(this)}
+        data-pulse={this.props.index === 0}
         >
 
         </div>
@@ -507,7 +509,7 @@ class GrabBar extends React.Component{
     }
 
     getClassList(){
-        return (this.props.index === 0 ?"bg-success" :"bg-dark")+" h-100 cursor-grab";
+        return "bg-dark h-100 cursor-grab";
     }
 }
 
@@ -515,7 +517,7 @@ class Square extends React.Component{
     
     
     render(){
-        return <div className={this.getClassList()} id={this.props.id} ref={this.setReference.bind(this)} onClick={this.props.onClick}>
+        return <div data-pulse={this.props.pulse} className={this.getClassList()} id={this.props.id} ref={this.setReference.bind(this)} onClick={this.props.onClick}>
             <div className={this.getSquareClassList()} style={this.getStyleSheet()} id={this.props.id}>
                 {this.props.children}
             </div>
@@ -894,7 +896,7 @@ class AbilityScoreItem extends React.Component{
                 title={this.getTitle()} 
                 value={this.props.stat||0}
                 onChange={this.setScore.bind(this)}
-                onClick={this.focusInput.bind(this)} 
+                onFocus={this.focusInput.bind(this)} 
                 hidden={this.state.isFocused} 
                 value={(this.props.stat > 9 ? "+":"")+calcBonus(this.props.stat||0)}
             />
@@ -1236,7 +1238,7 @@ class NotificationList extends React.Component{
         position: "fixed",
         bottom: 0,
         right: 0,
-        zIndex: 9999,
+        zIndex: 40,
     }
 
     constructor(){
